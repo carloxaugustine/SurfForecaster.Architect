@@ -2,10 +2,17 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * ConsoleMenu class provides a text-based menu interface for interacting with the SurfForecast application.
+ */
 public class ConsoleMenu {
-
+    /**
+     * Scanner object for reading user input.
+     */
     private final Scanner scanner = new Scanner(System.in);
-
+    /**
+     * Displays the main menu options to the console.
+     */
     public void showMenu() {
         System.out.println("1. Get surf spot at index (1D array)");
         System.out.println("2. Set surf spot at index (1D array)");
@@ -28,16 +35,33 @@ public class ConsoleMenu {
     }
 
 
+    /**
+     * Prompts the user for an index with a custom message.
+     *
+     * @param message The message to display when prompting for an index.
+     * @return The index entered by the user.
+     */
     private int promptForIndex(String message) {
         System.out.println(message);
         return scanner.nextInt();
     }
-
+    /**
+     * Prompts the user for a String with a custom message.
+     *
+     * @param message The message to display when prompting for a String.
+     * @return The String entered by the user.
+     */
     private String promptForString(String message) {
         System.out.println(message);
         return scanner.next();
     }
-
+    /**
+     * Executes the action corresponding to the user's menu choice.
+     *
+     * @param choice    The menu option chosen by the user.
+     * @param forecast  The SurfForecast object to operate on.
+     * @param io        The SurfDataIO object for data operations.
+     */
     public void executeChoice(int choice, SurfForecast forecast, SurfDataIO io) {
         int index;
         String surfSpot;
@@ -78,7 +102,12 @@ public class ConsoleMenu {
                 break;
         }
     }
-
+    /**
+     * Handles the saving of surf forecast data.
+     *
+     * @param forecast The SurfForecast object to save.
+     * @param io       The SurfDataIO object for data operations.
+     */
     private void handleSaveData(SurfForecast forecast, SurfDataIO io) {
         try {
             io.saveData(forecast);
@@ -87,7 +116,12 @@ public class ConsoleMenu {
             System.out.println("Error saving data: " + e.getMessage());
         }
     }
-
+    /**
+     * Handles the loading of surf forecast data.
+     *
+     * @param forecast The SurfForecast object to load data into.
+     * @param io       The SurfDataIO object for data operations.
+     */
     private void handleLoadData(SurfForecast forecast, SurfDataIO io) {
         try {
             forecast = io.loadData();

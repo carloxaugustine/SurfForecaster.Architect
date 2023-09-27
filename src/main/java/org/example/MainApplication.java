@@ -5,11 +5,22 @@ import java.util.Scanner;
 
 // Interface for Data Import
 interface DataImport {
+    /**
+     * Imports data.
+     * @return An ArrayList containing the imported data.
+     */
     ArrayList<String> importData();
 }
 
-// Implementation of DataImport
+
+/**
+ * Implementation of DataImport for importing surf line data.
+ */
 class SurfLineDataImport implements DataImport {
+    /**
+     * Imports fake surf line data for demonstration.
+     * @return An ArrayList containing the imported data.
+     */
     public ArrayList<String> importData() {
         // Fake data for demonstration
         ArrayList<String> data = new ArrayList<>();
@@ -21,27 +32,45 @@ class SurfLineDataImport implements DataImport {
 
 // Base User class
 class User {
-    public void sharedMethod() {
+    /**
+     * A shared method for all users.
+     * @return null
+     */
+    public Object sharedMethod() {
         System.out.println("This is a shared method.");
+        return null;
     }
 }
 
 // Admin class extending User
 class Admin extends User {
-    public void adminMethod() {
+    /**
+     * An admin-specific method.
+     * @return 0
+     */
+    public short adminMethod() {
         System.out.println("This is an admin-specific method.");
+        return 0;
     }
 }
 
 // Customer class extending User
 class Customer extends User {
-    public void customerMethod() {
+    /**
+     * A customer-specific method.
+     * @return 0
+     */
+    public short customerMethod() {
         System.out.println("This is a customer-specific method.");
+        return 0;
     }
 }
 
 // Class for Array Operations (Module 1 & 2)
 class ArrayOperations {
+    /**
+     * Displays the array operations menu.
+     */
     public void showMenu() {
         System.out.println("Array Operations Menu:");
         System.out.println("1. Get element at index (1D array)");
@@ -50,19 +79,42 @@ class ArrayOperations {
         System.out.println("9. Set element at index (2D array)");
         System.out.println("Enter your choice for array operations:");
     }
-
+    /**
+     * Gets the element at the given index in a 1D array.
+     * @param arr The array.
+     * @param index The index.
+     * @return The element at the given index.
+     */
     public int getAtIndex(int[] arr, int index) {
         return arr[index];
     }
 
+    /**
+     * Sets the element at the given index in a 1D array.
+     * @param arr The array.
+     * @param index The index.
+     * @param value The value to set.
+     */
     public void setAtIndex(int[] arr, int index, int value) {
         arr[index] = value;
     }
-
+    /**
+     * Gets the element at the given row and column in a 2D array.
+     * @param arr The 2D array.
+     * @param row The row.
+     * @param col The column.
+     * @return The element at the given row and column.
+     */
     public int getAtIndex(int[][] arr, int row, int col) {
         return arr[row][col];
     }
-
+    /**
+     * Sets the element at the given row and column in a 2D array.
+     * @param arr The 2D array.
+     * @param row The row.
+     * @param col The column.
+     * @param value The value to set.
+     */
     public void setAtIndex(int[][] arr, int row, int col, int value) {
         arr[row][col] = value;
     }
@@ -70,8 +122,12 @@ class ArrayOperations {
 
 // Main Application class (Module 4)
 public class MainApplication {
+    /**
+     * The main method for the application.
+     * @param args Command-line arguments.
+     */
     public static void main(String[] args) {
-        // Your existing code
+
         SurfForecast forecast = new SurfForecast();
         ConsoleMenu menu = new ConsoleMenu();
         Scanner scanner = new Scanner(System.in);
@@ -84,7 +140,7 @@ public class MainApplication {
 
 
         while (true) {
-            // menu.showMenu();  // Your existing menu
+            // menu.showMenu();  // existing menu
             arrayOps.showMenu();  // New menu for array operations
 
             int choice = scanner.nextInt();
