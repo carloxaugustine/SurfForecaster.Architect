@@ -1,4 +1,6 @@
-package org.example;
+package org.example.controllers;
+
+import org.example.models.SurfForecast;
 
 import java.io.*;
 

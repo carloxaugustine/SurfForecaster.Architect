@@ -1,4 +1,4 @@
-package org.example;
+package org.example.views;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;

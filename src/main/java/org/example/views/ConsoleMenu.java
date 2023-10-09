@@ -1,4 +1,7 @@
-package org.example;
+package org.example.views;
+
+import org.example.controllers.SurfDataIO;
+import org.example.models.SurfForecast;
 
 import java.util.Scanner;
 
