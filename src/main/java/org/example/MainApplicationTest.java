@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.controllers.ArrayOperations;
+import org.example.models.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
